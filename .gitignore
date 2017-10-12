@@ -1,0 +1,12 @@
+# folder
+themes
+public
+
+# file
+config.toml
+
+# image
+*.jpg
+*.png
+*.gif
+*.ico

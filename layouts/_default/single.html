@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p style="font-size: 1.2em;">{{ dateFormat "2006-01-02" .Date }} {{ index $.Site.Data.weekday (dateFormat "Monday" .Date ) }}</p>
+<p>PATH: <a href="/{{ .Dir }}">/{{ .Dir }}</a></p>
+<p>标签: {{ range .Params.tags }} <a href="/tags/{{.}}">{{.}}</a> {{end}}</p>
+<p>类别: {{ range .Params.categories }} <a href="/categories/{{.}}">{{.}}</a> {{end}}</p>
+<HR>
+<div>{{ .Content }}</div>
+{{ end }}
+
+{{ define "navi" }}
+<a class="text_navigation_link" href="/">homepage</a>
+> <a class="text_navigation_link" href="/{{ .Dir }}">{{ trim .Dir "/"}}</a>
+{{end}}

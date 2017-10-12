@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h4>{{ .Title }}:</h4>
+<ul>
+{{ range .Pages}}
+<li><a href="{{ .URL }}">{{ .Title }}</a></li>
+{{end}}
+</ul>
+{{ end }}
+
+{{ define "navi" }}
+<a class="text_navigation_link" href="/">homepage</a>
+> <a class="text_navigation_link" href="{{ .URL }}">{{ trim .URL "/"}}</a>
+{{end}}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" href="/common/favicon.ico" type="image/x-icon">
+	<title>スキマのバス停</title>
+	<link rel="stylesheet" href="/main.css" type="text/css" media="screen">
+	<script src="/main.js"></script>
+
+</head>
+
+<body>
+  <a name="head"></a>
+	<div class="view_field">
+
+		{{ partial "site-header.html" . }}
+
+		<!-- navigation -->
+		<div class="navigation_bar">
+			<table class="navigation_table">
+				<tr>
+					<td><a class="navigation_cell" href="/">Homepage</a></td>
+					<td><a class="navigation_cell" href="#">Blog</a></td>
+					<td><a class="navigation_cell" href="#">Others</a></td>
+				</tr>
+			</table>
+		</div>
+		<!-- end navigation -->
+
+
+		<!-- text-navigation -->
+        <div class="text_navigation">
+            <p class="text_navigation_text" id="txt_navi">
+                {{ block "navi" . }}<a class="text_navigation_link" href="/">homepage</a>{{end}}
+            </p>
+        </div>
+        <HR>
+		<!-- end text-navigation -->
+
+
+		<!-- text-filed -->
+		<div class="text_filed" id="txt_filed">
+            <br>
+            {{ block "main" . }}{{end}}
+            <br>
+		</div>
+
+    <br><HR>
+		<br><p align="center"><a class="navigation_cell" href="#head">返回顶部</a></p><br>
+		<!-- end text-filed -->
+	</div>
+		{{ partial "site-footer.html" . }}
+</body>
