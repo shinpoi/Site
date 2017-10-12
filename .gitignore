@@ -10,3 +10,8 @@ config.toml
 *.png
 *.gif
 *.ico
+
+# data
+*.tar
+*.zip
+*.gz

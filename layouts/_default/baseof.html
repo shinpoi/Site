@@ -8,7 +8,8 @@
 	<title>スキマのバス停</title>
 	<link rel="stylesheet" href="/main.css" type="text/css" media="screen">
 	<script src="/main.js"></script>
-
+	{{ block "extra_js" .}} {{ end }}
+	{{ block "extra_css" .}} {{ end }}
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 			<table class="navigation_table">
 				<tr>
 					<td><a class="navigation_cell" href="/">Homepage</a></td>
-					<td><a class="navigation_cell" href="#">Blog</a></td>
+					<td><a class="navigation_cell" href="/blog/">Blog</a></td>
 					<td><a class="navigation_cell" href="#">Others</a></td>
 				</tr>
 			</table>
