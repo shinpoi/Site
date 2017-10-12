@@ -6,6 +6,6 @@
 
 <h4>pages:</h4>
 <ul>
-{{ range (last 5 .Pages) }}<li><a href="{{ .URL }}">{{ .Title }} ( {{ .URL }} ) </a></li>{{end}}
+{{ range (last 5 .Pages) }}<li><a href="{{ .URL }}">{{ .Title }}</a></li>{{end}}
 </ul>
 {{ end }}
