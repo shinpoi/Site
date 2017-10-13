@@ -32,22 +32,23 @@
 
 
 		<!-- text-navigation -->
-        <div class="text_navigation">
-            <p class="text_navigation_text" id="txt_navi">
-                {{ block "navi" . }}<a class="text_navigation_link" href="/">homepage</a>{{end}}
-            </p>
-        </div>
-        <HR>
+    <div class="text_navigation">
+    	<p class="text_navigation_text" id="txt_navi">
+      	{{ block "navi" . }}<a class="text_navigation_link" href="/">homepage</a>{{end}}
+      </p>
+    </div>
+    <HR>
 		<!-- end text-navigation -->
 
 
 		<!-- text-filed -->
 		<div class="text_filed" id="txt_filed">
-            <br>
-            {{ block "main" . }}{{end}}
-            <br>
+    	<br/>
+    		{{ block "main" . }}{{end}}
+  		<br/><br/>
+				{{ block "license" . }}{{end}}
+			<br/>
 		</div>
-
     <br><HR>
 		<br><p align="center"><a class="navigation_cell" href="#head">返回顶部</a></p><br>
 		<!-- end text-filed -->

@@ -4,8 +4,9 @@ a.link {font-size:0.8em;color:#404040;}
 /* old version end*/
 
 body{
+	color: #252525;
 	background: url(/common/bg01.gif) fixed;
-	font-family: STXihei, Microsoft YaHei, sans-serif;
+	font-family: sans-serif, Microsoft YaHei, STXihei;
 }
 
 img{
@@ -13,8 +14,14 @@ img{
     margin: auto;
 }
 
+hr{
+	height:1px;
+	border-width:0;
+	background-color:rgba(0,0,0,0.4);
+}
+
 #txt_filed img{
-    max-width:870px; 
+    max-width: 870px;
 }
 
 #txt_filed a{
@@ -27,8 +34,20 @@ img{
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
+#subtitle{
+	cursor: pointer;
+	color: #252525;
+	text-decoration: none;
+	cursor: default;
+}
+
+#subtitle:hover{
+	color: black;
+}
+
 .fix_text{
-	margin: 0
+	margin: 0;
+	cursor: default;
 }
 
 .cut_off_bar_01{
@@ -83,6 +102,7 @@ img{
 	text-decoration: none;
 	background-color: rgba(255, 255, 255, 0.2);
 	border:1px solid rgba(0, 0, 0, 0.4);
+	cursor: default;
 }
 .image_info_link:hover{
 	color: black;
@@ -125,13 +145,14 @@ img{
 }
 
 .text_navigation_text{
+	margin: 0.2em 0;
 	position: relative;
-	margin: 0.1em 0;
 	left: 2.6em;
 }
 
 .text_navigation_link{
 	text-decoration: none;
+	margin: 0;
 	color: #223344;
 }
 .text_navigation_link:hover{
@@ -143,6 +164,19 @@ img{
 	margin-left: auto;
 	margin-right: auto;
 	border:1px none black;
+}
+
+.license{
+	width: 60%;
+	height: 1.8em;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius: 1em;
+	padding: 0.6em 2em 0.6em 2em;
+	text-align: center;
+	background-color: rgba(140, 250, 140, 0.3);
+	/*outline: dashed rgba(0,0,0,0.4) thin;*/
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 .tail{
@@ -158,6 +192,7 @@ img{
 	color: #222222;
 	text-decoration: none;
 }
+
 .blog_index_link:hover{
 	color: black;
 }

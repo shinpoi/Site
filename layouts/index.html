@@ -1,10 +1,10 @@
 {{ define "main" }}
 <div>
-  <p>say something at homepage ...</p>
+  <p>主页施工中 ...</p>
   <HR>
 </div>
 
-<h4>pages:</h4>
+<h4>最近发布:</h4>
 <ul>
 {{ range (last 5 .Pages) }}<li><a href="{{ .URL }}">{{ .Title }}</a></li>{{end}}
 </ul>

@@ -2,11 +2,11 @@
 <div class='head'>
 	<div style="width: 50%; height: 100%; float:left;">
 		<div style="height: 60%; position: relative; left: 1.1em; top: 0.6em; font-size: 1.65em;">
-			<p class="fix_text">aoi-lucario.org</p>
+			<p class="fix_text" id="title">aoi-lucario.org</p>
 		</div>
 
-		<div style="height: 40%; position: relative; left: 6em; font-size: 0.9em;">
-			<p class="fix_text">副标题，写点什么好呢...</p>
+		<div style="width: 150%; position: relative; left: 4em; font-size: 0.9em;">
+			<p class="fix_text" onclick="set_subtitle()"><a id="subtitle">　</a></p>
 		</div>
 	</div>
 
@@ -31,7 +31,7 @@
 <div class="cut_off_bar_02"></div>
 <div class="head_photo">
 	<div class="image_info">
-		<a target="_blank" class="image_info_link">MineCraft World-Lucario</a>
+		<a target="_blank" class="image_info_link" onclick="set_head_image()">MineCraft World-Lucario</a>
 	</div>
 	<img id="head_img">
 </div>
