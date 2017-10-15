@@ -1,0 +1,18 @@
+<div class="msg_board">
+  <h3 style="margin:0;">留言板</h3>
+  <HR>
+  <table class="msg_table" id="msg_table">
+  </table>
+
+  <div class="msg_form"><form  action="#" method="post" id="msg_form">
+    <span>留言：</span><br/>
+    <br/>姓名:
+    <input type="text" name="name" id="msg_name_box" placeholder="必填，20字以内">
+    <br/>链接:
+    <input type="text" name="url" id="msg_url_box" placeholder="可选，60字以内（http(s)://...）">
+    <br/>消息<span class="msg_comment">（必填，500字以内）</span>:<br/>
+    <textarea type="text" name="msg" wrap="virtual" id="msg_msg_box" placeholder="请在这里留言..."></textarea>
+    <p id="msg_warn"></p>
+    <button type="button" onclick="send_msgb()" id="msg_submit">　发送　</button>
+  </form></div>
+</div>

@@ -8,7 +8,7 @@
 
 
 {{ define "main" }}
-<span id="bid">{{.Params.lisence}}</span>
+<span id="bid">{{.Params.bid}}</span>
 <h1>{{ .Title }}</h1>
 <p style="font-size: 1.1em;">发布日期：{{ dateFormat "2006-01-02" .Date }} {{ index $.Site.Data.weekday (dateFormat "Monday" .Date ) }}</p>
 <!--<p>PATH: <a href="/{{ .Dir }}">/{{ .Dir }}</a></p>-->
@@ -31,21 +31,5 @@
 {{end}}{{end}}
 
 {{ define "message_board" }}
-<div class="msg_board">
-  <h3 style="margin:0;">留言板</h3>
-  <HR>
-  <table class="msg_table" id="msg_table">
-  </table>
-
-    <div class="msg_form"><form  action="#" method="post" id="msg_form">
-      <span>留言：</span><br/>
-      <br/>姓名:
-      <input type="text" name="name" class="msg_name_box" placeholder="20个文字以内">
-      <br/>链接:
-      <input type="text" name="url" class="msg_url_box" placeholder="60个字符以内">
-      <br/>消息<span class="msg_comment">（240个文字以内）</span>:<br/>
-      <textarea type="text" name="msg" class="msg_msg_box" wrap="virtual" placeholder="请在这里留言..."></textarea>
-      <button type="button" onclick="post_msgb()" id="msg_submit">　发送　</button>
-    </form></div>
-  </div>
+{{ partial "message_board.html" . }}
 {{end}}

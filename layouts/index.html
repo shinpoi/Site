@@ -1,5 +1,6 @@
 {{ define "main" }}
 <div>
+  <span id="bid">0</span>
   <p>主页施工中 ...</p>
   <HR>
 </div>
@@ -8,4 +9,6 @@
 <ul>
 {{ range (last 5 .Pages) }}<li><a href="{{ .URL }}">{{ .Title }}</a></li>{{end}}
 </ul>
+<br/><br/><HR><br/><br/>
+{{ partial "message_board.html" . }}
 {{ end }}
