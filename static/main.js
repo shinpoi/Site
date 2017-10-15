@@ -73,7 +73,7 @@ function parse_msgb(arr){
 function check_input(name, url, text){
   if (!name || !text) {document.getElementById("msg_warn").textContent = "请输入姓名和留言"; return false;}
   if (url) {
-    var url_p = /(http:\/\/|https:\/\/)?[0-9a-z|-]+?\.[0-9a-z|-]+?/i;
+    var url_p = /(http:\/\/|https:\/\/)[0-9a-z|-]+?\.[0-9a-z|-]+?/i;
     var is_url = url.match(url_p);
     if (!is_url) {document.getElementById("msg_warn").textContent = "请输入正确的链接格式"; return false;}
   }
