@@ -8,8 +8,9 @@
 
 
 {{ define "main" }}
+<span id="bid">{{.Params.lisence}}</span>
 <h1>{{ .Title }}</h1>
-<p style="font-size: 1.2em;">{{ dateFormat "2006-01-02" .Date }} {{ index $.Site.Data.weekday (dateFormat "Monday" .Date ) }}</p>
+<p style="font-size: 1.1em;">发布日期：{{ dateFormat "2006-01-02" .Date }} {{ index $.Site.Data.weekday (dateFormat "Monday" .Date ) }}</p>
 <!--<p>PATH: <a href="/{{ .Dir }}">/{{ .Dir }}</a></p>-->
 <p>标签: {{ range .Params.tags }} <a href="/tags/{{.}}">{{.}}</a> {{end}}</p>
 <p>类别: {{ range .Params.categories }} <a href="/categories/{{.}}">{{.}}</a> {{end}}</p>
@@ -28,3 +29,23 @@
   <span>声明： 本文允许自由转载 - 转载请注明出处 - 禁止用于商业用途</span>
 </div>
 {{end}}{{end}}
+
+{{ define "message_board" }}
+<div class="msg_board">
+  <h3 style="margin:0;">留言板</h3>
+  <HR>
+  <table class="msg_table" id="msg_table">
+  </table>
+
+    <div class="msg_form"><form  action="#" method="post" id="msg_form">
+      <span>留言：</span><br/>
+      <br/>姓名:
+      <input type="text" name="name" class="msg_name_box" placeholder="20个文字以内">
+      <br/>链接:
+      <input type="text" name="url" class="msg_url_box" placeholder="60个字符以内">
+      <br/>消息<span class="msg_comment">（240个文字以内）</span>:<br/>
+      <textarea type="text" name="msg" class="msg_msg_box" wrap="virtual" placeholder="请在这里留言..."></textarea>
+      <button type="button" onclick="post_msgb()" id="msg_submit">　发送　</button>
+    </form></div>
+  </div>
+{{end}}

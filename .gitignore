@@ -1,6 +1,7 @@
 # folder
 themes
 public
+flask
 
 # file
 config.toml

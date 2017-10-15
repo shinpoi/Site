@@ -7,4 +7,5 @@ draft: true
 ex_js: 0
 ex_css: 0
 lisence: true
+bid: none
 ---
