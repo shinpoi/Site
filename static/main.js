@@ -59,7 +59,7 @@ function get_msgb(){
   }
   ajax_msg.open("post", api_server+"msg", true);
   ajax_msg.timeout = 20000;
-  ajax_msg.send(JSON.stringify(JSON.stringify({"b":bid, "a":0})));
+  ajax_msg.send(JSON.stringify({"b":bid, "a":0}));
 }
 
 function parse_msgb(arr){
