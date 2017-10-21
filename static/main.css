@@ -269,3 +269,15 @@ hr{
 	font-size: 0.9em;
 	color: #ff4040;
 }
+
+.pointer{
+	cursor: pointer;
+}
+
+a.no-underline{
+	text-decoration:none;
+}
+
+.d_color{
+	color: inherit;
+}

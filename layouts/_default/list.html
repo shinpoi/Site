@@ -8,6 +8,5 @@
 {{ end }}
 
 {{ define "navi" }}
-<a class="text_navigation_link" href="/">homepage</a>
-&nbsp> <a class="text_navigation_link" href="{{ .URL }}">{{ .Title }}</a>
+{{ partial "site-list-navi.html" . }}
 {{end}}

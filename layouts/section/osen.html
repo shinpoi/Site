@@ -1,0 +1,91 @@
+{{ define "main" }}
+<h2>音泉Spider</h2>
+<p id="bid">9999</p>
+<p>　- 把发布页面整合到主站里了……顺带开了留言板，有问题可以留言~</p>
+<HR>
+<h3>说明：</h3>
+<p><a href="http://www.onsen.ag/" target="_blank">音泉</a>爬虫，右键另存为下载。代码见<a href="https://github.com/shinpoi/spdier/blob/master/osen.py" target="_blank">GitHub</a>。</p>
+<li>ほめらじ　502期开始抓取</li>
+<li>ほめらじ反省会　530期开始</li>
+<li>オトメ＊ドメイン　27期开始</li>
+<p>以后可能还会抓些其他广播剧...</p>
+<p style="color:red">P.S.1　转载时请将资源分流到网盘后转载，<b>不要</b>扩散这个地址<b>（包括音频文件的链接）</b></p>
+<p style="color:#cc4444;">P.S.2　如果您是从 <b>站主本人 or KF 以外</b>的地方得到的本站的链接，请帮个忙联系发布者删除链接，谢谢~</p>
+<p>P.S.3　感谢锅大人的技术支持，锅大人万岁！</p>
+<HR><br/>
+<div class="osen_title">
+<p class="click_bar"><a href="http://www.onsen.ag/program/home/" target="_blank" class="pointer no-underline d_color">ほめられてのびるらじお　</a>|
+<a class="pointer no-underline" onclick="GetAjax('/osen/homeraji.json', ParseJSON, 'homeraji'); DisplayBlock('homeraji_div');">　展开　</a>|
+<a class="pointer no-underline" onclick="HideBlock('homeraji_div')">　收起　<a>|</p>
+</div>
+
+<div id="homeraji_div" style="display: none;">
+<table class="osen_table" id="homeraji">
+  <tr>
+    <td>　回数　</td>
+    <td>　ゲスト　</td>
+    <td>　アップデート　</td>
+    <td>　おまけ　</td>
+  </tr>
+</table>
+<br/><a onclick="HideBlock('homeraji_div')" class="click_bar pointer">↑　收起　↑<a>
+</div>
+
+<br/><br/><HR>
+
+<div class="osen_title" >
+<p class="click_bar"><a href="http://www.onsen.ag/program/otomain/" target="_blank" class="pointer no-underline d_color">オトメ＊ドメイン　RADIO＊MAIDEN　</a>|
+<a class="pointer no-underline" onclick="GetAjax('/osen/homeraji.json', ParseJSON, 'otomain'); DisplayBlock('otomain_div')">　展开　</a>|
+<a class="pointer no-underline" onclick="HideBlock('otomain_div');">　收起　</a>|</p>
+</div>
+<div id="otomain_div" style="display: none;">
+<table class="osen_table" id="otomain">
+  <tr>
+    <td>　回数　</td>
+    <td>　ゲスト　</td>
+    <td>　アップデート　</td>
+  </tr>
+</table>
+<br/><a onclick="HideBlock('otomain_div')" class="click_bar pointer">↑　收起　↑<a>
+</div>
+
+<br/><br/><HR><br/>
+{{ partial "message_board.html" . }}
+{{end}}
+
+{{ define "navi" }}
+{{ partial "site-list-navi.html" . }}
+{{end}}
+
+{{ define "extra_js" }}
+<script type="text/javascript" src="/osen/osen.js"></script>
+{{end}}
+
+{{ define "extra_css" }}
+<style type="text/css">
+#txt_filed table{
+  border-collapse:collapse;
+  border:2px solid #111144;
+}
+
+#txt_filed td, th{
+  border:1px solid black;
+  text-align: center;
+}
+
+#txt_filed td{
+  padding: 0.2em 0.5em;
+}
+
+.click_bar{
+  background-color: #ddeeff;
+  border:1px solid black;
+  padding: 0 1em;
+}
+
+a.click_bar{
+  padding: 0.2em 10em;
+  text-align: center;
+}
+</style>
+{{end}}

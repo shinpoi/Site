@@ -1,5 +1,6 @@
 var domain_url = "http://aoi-lucario.org/";
-var api_server = "http://test.aoi-lucario.org/";
+// var api_server = "http://test.aoi-lucario.org/";
+var api_server = "http://127.0.0.1/";
 var key = 0;
 var lv = 0;
 var bid = null;
@@ -63,8 +64,8 @@ function get_msgb(){
 }
 
 function parse_msgb(arr){
-  obj = JSON.parse(arr);
-  len = obj.length
+  var obj = JSON.parse(arr);
+  var len = obj.length
   for (var i=0; i<len; i++){
     appendMSG(obj[i]['n'], obj[i]['t'], obj[i]['d'], obj[i]['i'], obj[i]['u']);
   }
