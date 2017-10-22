@@ -64,7 +64,7 @@ function post_ajax(url, data, callback){
 }
 
 function get_msgb(){
-  post_ajax(api_server+"msg", JSON.stringify({"b":bid, "a":0}, parse_msgb));
+  post_ajax(api_server+"msg", JSON.stringify({"b":bid, "a":0}), parse_msgb);
 }
 
 function parse_msgb(arr){
