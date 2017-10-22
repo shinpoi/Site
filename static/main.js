@@ -1,6 +1,6 @@
 var domain_url = "http://aoi-lucario.org/";
 // var api_server = "http://test.aoi-lucario.org/";
-var api_server = "http://127.0.0.1/";
+var api_server = "http://127.0.0.1:5000/";
 var key = 0;
 var lv = 0;
 var bid = null;
@@ -51,16 +51,20 @@ function set_subtitle(){
 // message board
 // {i:id, n:username, u:url, t:text, f:follow, d:date}
 // appendMSG(user, text, date, id)
-function get_msgb(){
+function post_ajax(url, data, callback){
   var ajax_msg = new XMLHttpRequest();
   ajax_msg.onreadystatechange=function(){
     if (ajax_msg.readyState==4 && ajax_msg.status==200){
-      parse_msgb(ajax_msg.responseText);
+      callback(ajax_msg.responseText);
     }
   }
-  ajax_msg.open("post", api_server+"msg", true);
+  ajax_msg.open("post", url, true);
   ajax_msg.timeout = 20000;
-  ajax_msg.send(JSON.stringify({"b":bid, "a":0}));
+  ajax_msg.send(data);
+}
+
+function get_msgb(){
+  post_ajax(api_server+"msg", JSON.stringify({"b":bid, "a":0}, parse_msgb));
 }
 
 function parse_msgb(arr){
@@ -159,6 +163,14 @@ function appendMSG(user, text, date, id, url){
 function get_lv(add){
   lv += 1;
   return lv;
+}
+
+function DisplayBlock(id_){
+  document.getElementById(id_).style.display = 'inline';
+}
+
+function HideBlock(id_){
+  document.getElementById(id_).style.display = 'none';
 }
 
 ///////////////////////////////////////////////////////

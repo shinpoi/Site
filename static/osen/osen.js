@@ -79,11 +79,3 @@ function GetAjax(filename, callback, add_id) {
   ajax_msg.timeout = 20000;
   ajax_msg.send();
 }
-
-function DisplayBlock(id_){
-  document.getElementById(id_).style.display = 'inline';
-}
-
-function HideBlock(id_){
-  document.getElementById(id_).style.display = 'none';
-}

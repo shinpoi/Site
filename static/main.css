@@ -35,7 +35,6 @@ hr{
 }
 
 #subtitle{
-	cursor: pointer;
 	color: #252525;
 	text-decoration: none;
 	cursor: default;
@@ -270,6 +269,7 @@ hr{
 	color: #ff4040;
 }
 
+/* Common class*/
 .pointer{
 	cursor: pointer;
 }

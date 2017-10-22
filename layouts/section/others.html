@@ -1,7 +1,31 @@
 {{ define "main" }}
-<h4>施工中……</h4>
+<p style="padding: 0 2em; outline: dashed #334433 thin;"><span onclick="get_recently_msg();DisplayBlock('recently_msg');" class="pointer">　最近留言　</span>|
+<a onclick="HideBlock('recently_msg');" class="pointer">　收起　</a>|</p>
+<div id="recently_msg" style="display:none;">
+</div>
 {{end}}
 
 {{ define "navi" }}
 {{ partial "site-list-navi.html" . }}
+{{end}}
+
+{{ define "extra_js" }}
+<script type="text/javascript">
+var flag_recently_msg = 0;
+
+function get_recently_msg(){
+  if (!flag_recently_msg) {post_ajax(api_server+"msg", JSON.stringify({"a":2}), parse_recently_msg);}
+}
+
+function parse_recently_msg(arr){
+  var a = document.getElementById("recently_msg");
+  len = arr.length;
+  for (var i=0; i<len; i++){
+    var li = document.createElement("li");
+    li.textContent = arr[i]['n'] + " at " + arr[i]['i'] + " in" + arr[i]['d'];
+    a.appendChild(li);
+  }
+  flag_recently_msg = true;
+}
+</script>
 {{end}}
