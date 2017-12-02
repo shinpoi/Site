@@ -1,5 +1,5 @@
 var domain_url = "http://aoi-lucario.org/";
-var api_server = "http://test.aoi-lucario.org/";
+var api_server = "https://test.aoi-lucario.org/";
 // var api_server = "http://127.0.0.1:5000/";
 var key = 0;
 var lv = 0;
